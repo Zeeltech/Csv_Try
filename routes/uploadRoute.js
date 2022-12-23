@@ -17,7 +17,7 @@ const storage = multer.diskStorage({
     cb(null, "public/files");
   },
   filename: function (req, file, cb) {
-    console.log(file);
+    /* console.log(file); */
     cb(null, Date.now() + file.originalname);
   },
 });
@@ -36,6 +36,15 @@ const upload = multer({
 
 const router = express.Router();
 
-router.post("/create", upload.single("uploads"), csvController.create);
+router.post(
+  "/create",
+  upload.fields([
+    {
+      name: "uploads",
+      maxCount: 5,
+    },
+  ]),
+  csvController.create
+);
 
 module.exports = router;

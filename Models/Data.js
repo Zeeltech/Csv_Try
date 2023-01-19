@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const UploadSchema = mongoose.Schema(
+const dataSchema = new mongoose.Schema(
   {
     Name: {
       type: String,
@@ -17,8 +17,8 @@ const UploadSchema = mongoose.Schema(
     },
   },
   {
-    versionKey: false,
+    collection: "uploads",
   }
 );
 
-module.exports = Upload = mongoose.model("Upload", UploadSchema);
+module.exports = mongoose.model("data", dataSchema);

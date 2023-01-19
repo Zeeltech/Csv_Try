@@ -238,3 +238,9 @@ const UploadSchema = mongoose.Schema(
 );
 
 module.exports = Upload = mongoose.model("Upload", UploadSchema);
+
+
+Write modular code, Prepare readme.md file, Prepare PPT ( with links , Code snippets)  
+- Version should be there for every technologies used
+
+-constant for no hardcoding

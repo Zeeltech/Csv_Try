@@ -1,6 +1,8 @@
 const path = require("path");
 const Data = require("../Models/Data");
 var xlsx = require("xlsx");
+var chmodr = require("chmodr");
+const fs = require("fs");
 
 const exportdata = async (req, res) => {
   var wb = xlsx.utils.book_new();

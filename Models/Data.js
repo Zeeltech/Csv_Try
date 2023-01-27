@@ -4,7 +4,7 @@ const dataSchema = new mongoose.Schema(
   {
     Name: {
       type: String,
-      unique: true,
+      unique: false,
       required: true,
     },
     Subject: {

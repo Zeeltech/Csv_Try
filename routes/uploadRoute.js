@@ -1,5 +1,5 @@
 const express = require("express");
-const csvController = require("../controllers/uploadController");
+const uploadController = require("../controllers/uploadController");
 const multer = require("multer"); // is a MIDDLEWARE to handle form-data
 const fs = require("fs"); // its File System to work with file on our system
 const path = require("path"); // to join paths of file and directories
@@ -46,7 +46,7 @@ router.post(
       maxCount: 5,
     },
   ]),
-  csvController.create
+  uploadController.create
 );
 
 module.exports = router;
